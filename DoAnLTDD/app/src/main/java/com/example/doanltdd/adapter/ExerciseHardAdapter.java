@@ -7,7 +7,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,21 +14,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doanltdd.R;
-import com.example.doanltdd.model.Exercise;
+import com.example.doanltdd.model.ExerciseHard;
 
 import java.util.List;
 
 public class ExerciseHardAdapter extends RecyclerView.Adapter<ExerciseHardAdapter.ExerciseViewHoder> {
     private Context context;
-    private List<Exercise> exerciseList;
+    private List<ExerciseHard> exerciseList;
 
     private AdapterView.OnItemClickListener listener;
-    public void setData(List<Exercise> list)
+    public void setData(List<ExerciseHard> list)
     {
         this.exerciseList = list;
         notifyDataSetChanged();
     }
-    public void setData(List<Exercise> list,Context context)
+    public void setData(List<ExerciseHard> list,Context context)
     {
         this.context = context;
         this.exerciseList = list;
@@ -44,14 +43,14 @@ public class ExerciseHardAdapter extends RecyclerView.Adapter<ExerciseHardAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseViewHoder holder, int position) {
-        Exercise exercise = exerciseList.get(position);
+        ExerciseHard exerciseHard = exerciseList.get(position);
 
-        if(exercise == null) {
+        if(exerciseHard == null) {
             return;
         }
 
-        holder.tvName.setImageResource(exercise.getResourceID());
-        holder.exName.setText(exercise.getName());
+        holder.tvName.setImageResource(exerciseHard.getResourceID());
+        holder.exName.setText(exerciseHard.getName());
         holder.itemView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,13 +77,15 @@ public class ExerciseHardAdapter extends RecyclerView.Adapter<ExerciseHardAdapte
         //Khởi tạo biến
         private ImageView tvName;
         private TextView exName;
-        LinearLayout linearLayout;
+       // LinearLayout linearLayout;
+       // RecyclerView recyclerView;
 
         public ExerciseViewHoder(View itemView) {
             super(itemView);
             //Gán biến
             tvName= (ImageView) itemView.findViewById(R.id.tv_name);
             exName=(TextView) itemView.findViewById(R.id.textview_name);
+          //  recyclerView= (RecyclerView) itemView.findViewById(R.id.rcv_item1);
             itemView.setOnClickListener(v -> Toast.makeText(context.getApplicationContext(),""+getAdapterPosition(),Toast.LENGTH_LONG).show());
         }
 

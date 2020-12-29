@@ -1,9 +1,7 @@
 package com.example.doanltdd.controller;
 
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.doanltdd.R;
 
-import java.util.List;
-
 public class Detail extends AppCompatActivity {
     TextView itemclick2_name, itemclick2_noidung;
     ImageView itemclick2_imgView;
@@ -21,7 +17,7 @@ public class Detail extends AppCompatActivity {
     Button btnNext, btnPrev;
     int position;
     static MediaPlayer mediaPlayer;
-    List<Contact> listEX;
+
     String sName;
 
     @Override
@@ -56,7 +52,7 @@ public class Detail extends AppCompatActivity {
 
 
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
+       /* btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                // mediaPlayer.stop();
@@ -72,7 +68,7 @@ public class Detail extends AppCompatActivity {
                 //SetTimeTotal();
               //  UpdateTimeSong();
             }
-        });
+        });*/
 
        /* btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override

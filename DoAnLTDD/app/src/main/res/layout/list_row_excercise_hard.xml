@@ -11,14 +11,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <ImageView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-
             android:padding="4dp"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="150dp"
             android:scaleType="centerCrop"
             android:src="@drawable/gymmenu"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center_vertical"
             android:id="@+id/tv_name">
             </ImageView>
             <TextView
@@ -31,7 +29,6 @@
 
             </TextView>
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>
 
 

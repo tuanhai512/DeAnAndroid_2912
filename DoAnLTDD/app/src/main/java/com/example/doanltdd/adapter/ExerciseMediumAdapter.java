@@ -15,21 +15,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doanltdd.R;
-import com.example.doanltdd.model.Exercise;
+import com.example.doanltdd.model.ExerciseMedium;
 
 import java.util.List;
 
 public class ExerciseMediumAdapter extends RecyclerView.Adapter<ExerciseMediumAdapter.ExerciseViewHoder> {
     private Context context;
-    private List<Exercise> exerciseList;
+    private List<ExerciseMedium> exerciseList;
 
     private AdapterView.OnItemClickListener listener;
-    public void setData(List<Exercise> list)
+    public void setData(List<ExerciseMedium> list)
     {
         this.exerciseList = list;
         notifyDataSetChanged();
     }
-    public void setData(List<Exercise> list,Context context)
+    public void setData(List<ExerciseMedium> list,Context context)
     {
         this.context = context;
         this.exerciseList = list;
@@ -44,14 +44,14 @@ public class ExerciseMediumAdapter extends RecyclerView.Adapter<ExerciseMediumAd
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseViewHoder holder, int position) {
-        Exercise exercise = exerciseList.get(position);
+        ExerciseMedium exerciseMedium = exerciseList.get(position);
 
-        if(exercise == null) {
+        if(exerciseMedium == null) {
             return;
         }
 
-        holder.tvName.setImageResource(exercise.getResourceID());
-        holder.exName.setText(exercise.getName());
+        holder.tvName.setImageResource(exerciseMedium.getResourceID());
+        holder.exName.setText(exerciseMedium.getName());
         holder.itemView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

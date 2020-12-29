@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.doanltdd.R;
-import com.example.doanltdd.controller.Contact;
+import com.example.doanltdd.model.Contact;
 
 import java.util.List;
 

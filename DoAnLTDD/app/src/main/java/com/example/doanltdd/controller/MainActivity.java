@@ -18,8 +18,9 @@ import com.example.doanltdd.R;
 import com.example.doanltdd.adapter.ExerciseAdapter;
 import com.example.doanltdd.adapter.ExerciseHardAdapter;
 import com.example.doanltdd.adapter.ExerciseMediumAdapter;
-import com.example.doanltdd.adapter.ListDataAdapter;
 import com.example.doanltdd.model.Exercise;
+import com.example.doanltdd.model.ExerciseHard;
+import com.example.doanltdd.model.ExerciseMedium;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     Toolbar toolbar;
     ListView listView;
-    ListDataAdapter listDataAdapter;
+   // ListDataAdapter listDataAdapter;
     RecyclerView rvData,rvData1,rvData2,rvData3;
   // ExerciseAdapter exerciseAdapter;
    // MyAdapter myAdapter;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         rvData2 = findViewById(R.id.rcv_item1);
         rvData3 = findViewById(R.id.rcv_item2);
 
-        listDataAdapter = new ListDataAdapter();
+     //   listDataAdapter = new ListDataAdapter();
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navView);
@@ -85,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
         rvData1.setAdapter(exerciseAdapter);
 
         ExerciseHardAdapter exerciseHardAdapter = new ExerciseHardAdapter();
-        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         rvData2.setLayoutManager(linearLayoutManager1);
-      //  rvData2.setFocusable(false);
-        rvData2.setHasFixedSize(true);
+        rvData2.setFocusable(false);
+        rvData2.setNestedScrollingEnabled(false);
         exerciseHardAdapter.setData(getlistExcerciseHard());
         rvData2.setAdapter(exerciseHardAdapter);
 
@@ -106,33 +107,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private List<Exercise> getlistExcerciseHard() {
-        List<Exercise> exerciseList = new ArrayList<>();
-        exerciseList.add(new Exercise(R.drawable.body2,"abc"));
-        exerciseList.add(new Exercise(R.drawable.body3,"abc"));
-        exerciseList.add(new Exercise(R.drawable.body2,"abc"));
-
+    private List<ExerciseHard> getlistExcerciseHard() {
+        List<ExerciseHard> exerciseList = new ArrayList<>();
+        exerciseList.add(new ExerciseHard(R.drawable.body2,"Cơ vai"));
+        exerciseList.add(new ExerciseHard(R.drawable.body3,"Cơ ngực"));
+        exerciseList.add(new ExerciseHard(R.drawable.body2,"Cơ tay"));
+        exerciseList.add(new ExerciseHard(R.drawable.body2,"Cơ chân"));
+        exerciseList.add(new ExerciseHard(R.drawable.body3,"Cơ bụng"));
+        exerciseList.add(new ExerciseHard(R.drawable.body2,"Cơ lưng"));
 
         return exerciseList;
     }
 
     private List<Exercise> getlistExcercise() {
         List<Exercise> exerciseList1 = new ArrayList<>();
-        exerciseList1.add(new Exercise(R.drawable.body2,"abc"));
-        exerciseList1.add(new Exercise(R.drawable.body3,"abc"));
-        exerciseList1.add(new Exercise(R.drawable.body2,"abc"));
+        exerciseList1.add(new Exercise(R.drawable.body2,"Cơ bản"));
+        exerciseList1.add(new Exercise(R.drawable.body3,"Trung bình"));
+        exerciseList1.add(new Exercise(R.drawable.body2,"Nâng cao"));
 
 
         return exerciseList1;
 
     }
-    private List<Exercise> getlistExcerciseMedium() {
-        List<Exercise> exerciseList2 = new ArrayList<>();
-        exerciseList2.add(new Exercise(R.drawable.body2,"abc"));
-        exerciseList2.add(new Exercise(R.drawable.body3,"abc"));
-        exerciseList2.add(new Exercise(R.drawable.body2,"abc"));
-
-
+    private List<ExerciseMedium> getlistExcerciseMedium() {
+        List<ExerciseMedium> exerciseList2 = new ArrayList<>();
+        exerciseList2.add(new ExerciseMedium(R.drawable.body2,"Tay trước - Tay sau "));
+        exerciseList2.add(new ExerciseMedium(R.drawable.body3,"Ngực - lưng "));
+        exerciseList2.add(new ExerciseMedium(R.drawable.body2,"Vai - Xô"));
+        exerciseList2.add(new ExerciseMedium(R.drawable.body2,"Chân trước - Chân sau"));
         return exerciseList2;
 
     }

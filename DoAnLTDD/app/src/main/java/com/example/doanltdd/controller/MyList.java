@@ -17,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.doanltdd.R;
 import com.example.doanltdd.adapter.MyAdapter;
+import com.example.doanltdd.model.Contact;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
