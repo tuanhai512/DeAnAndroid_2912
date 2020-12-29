@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".controller.Detail">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/itemclick2_imgview"
+        android:layout_width="wrap_content"
+        android:layout_height="293dp"
+        android:src="@drawable/ani" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemclick2_name"
+        android:textSize="25sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/itemclick2_noidung"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
+
+        >
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="Next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_editor_absoluteX="315dp"
+            tools:layout_editor_absoluteY="149dp" />
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Prev"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteX="11dp"
+            tools:layout_editor_absoluteY="162dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
